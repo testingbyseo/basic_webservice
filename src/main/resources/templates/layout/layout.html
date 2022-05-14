@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet"   href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <title>스프링부트 웹 서비스</title>
+</head>
+
+<!-- header 시작 -->
+<header th:replace="fragments/header.html :: headerFragment"></header>
+<!-- header 끝 -->
+
+<!-- content 시작 -->
+<div layout:fragment="content"></div>
+<!-- content 끝 -->
+
+<!-- footer 시작 -->
+<footer th:replace="fragments/footer.html :: footerFragment"></footer>
+<!-- footer 끝 -->
+
+
+</html>

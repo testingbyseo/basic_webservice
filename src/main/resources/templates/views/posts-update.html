@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout/layout}"
+>
+
+<head>
+    <!-- index.html 고유 CSS 추가 -->
+
+    <!-- index.html 고유 스크립트 추가 -->
+</head>
+
+<div layout:fragment="content">
+    <h1>게시글 수정</h1>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <form th:action>
+                <div class="form-group">
+                    <label for="title">글 번호</label>
+                    <input type="text" class="form-control" id="id" th:value="${posts.id}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" class="form-control" id="title" th:value="${posts.title}">
+                </div>
+                <div class="form-group">
+                    <label for="author"> 작성자 </label>
+                    <input type="text" class="form-control" id="author" th:value="${posts.author}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="content"> 내용 </label>
+                    <textarea class="form-control" id="content" th:text="${posts.content}" th:value="${posts.content}"></textarea>
+                </div>
+            </form>
+            <a href="/" role="button" class="btn btn-secondary">취소</a>
+            <button type="button" class="btn btn-primary" id="btn-update">수정 완료</button>
+            <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
+        </div>
+    </div>
+
+</div>
+
+
+</html>
