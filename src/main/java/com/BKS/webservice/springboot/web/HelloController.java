@@ -3,6 +3,7 @@ package com.BKS.webservice.springboot.web;
 import com.BKS.webservice.springboot.web.dto.HelloResponseDto;
 
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 
 @RestController

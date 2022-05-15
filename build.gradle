@@ -21,8 +21,10 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
 
     // lombok
     implementation ('org.projectlombok:lombok')
@@ -30,12 +32,13 @@ dependencies {
     testAnnotationProcessor ('org.projectlombok:lombok')
     testImplementation ('org.projectlombok:lombok')
 
-
+    implementation 'org.springframework.session:spring-session-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'com.h2database:h2'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    implementation 'org.springframework.security:spring-security-test'
 
 }
 

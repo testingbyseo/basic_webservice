@@ -19,6 +19,14 @@
         <div class="row">
             <div class="col-md-6">
                 <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+                <span th:if="${not #strings.isEmpty(userName)}">
+                        Logged in as: <span id="user" th:text="${userName}"></span>
+                        <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+                    </span>
+                <span th:unless="${not #strings.isEmpty(userName)}">
+                        <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                        <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+                </span>
             </div>
         </div>
         <br>
@@ -34,7 +42,7 @@
             </tr>
             </thead>
             <tbody id="tbody">
-                <tr th:each="post : ${posts}">
+                <tr th th:each="post : ${posts}">
                     <td th:text="${post.id}"></td>
                     <td><a th:href="@{'/posts/update/' + ${post.id}}"><span th:text="${post.title}"></span> </a> </td>
                     <td th:text="${post.author}">author</td>
